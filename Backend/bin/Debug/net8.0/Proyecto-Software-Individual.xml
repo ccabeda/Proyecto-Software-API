@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Proyecto-Software-Individual</name>
+    </assembly>
+    <members>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ApprovalStatusDTOs.ApprovalStatusGetDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ApprovalStatusDTOs.ApprovalStatusGetDTO.Name">
+            <example>Pendiente</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ApproverRoleDTOs.ApproverRoleGetDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ApproverRoleDTOs.ApproverRoleGetDTO.Name">
+            <example>Administrador</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.AreaDTOs.AreaGetDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.AreaDTOs.AreaGetDTO.Name">
+            <example>Finanzas</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProyectInvalidResponse.Message">
+            <example>Datos del proyecto inválidos</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectNotFound.Message">
+            <example>Parámetro de consulta inválido</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectNotExist.Message">
+            <example>Proyecto no encontrado</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectNotModification.Message">
+            <example>El proyecto ya no se encuentra en un estado que permite modificaciones</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.InvalidDates.Message">
+            <example>Datos de decisión inválidos</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProyectUpdateInvalidResponse.Message">
+            <example>Datos de actualización inválidos</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepDesitionDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepDesitionDTO.User">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepDesitionDTO.Status">
+            <example>2</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepDesitionDTO.Observation">
+            <example>Proyecto aprobado con modificaciones menores</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepGetDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepGetDTO.StepOrder">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepGetDTO.DecisionDate">
+            <example>null</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectApprovalStepDTOs.ProjectApprovalStepGetDTO.Observations">
+            <example>null</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCompleteGetDTO.Id">
+            <example>123e4567-e89b-12d3-a456-426614174000</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCompleteGetDTO.title">
+            <example>Sistema de Gestión de Inventarios</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCompleteGetDTO.Description">
+            <example>Desarrollo de un sistema para administrar el inventario de la empresa</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCompleteGetDTO.Amount">
+            <example>50000</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCompleteGetDTO.Duration">
+            <example>90</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.Title">
+            <example>Sistema de Control de Acceso</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.Description">
+            <example>Implementación de un sistema biométrico para el control de acceso al edificio</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.Amount">
+            <example>75000</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.Duration">
+            <example>120</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.Area">
+            <example>2</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.User">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalCreateDTO.Type">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalFilterDTO.title">
+            <summary>
+            Filtro por título del proyecto.
+            </summary>
+            <example>Sistema de Gestión</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalFilterDTO.status">
+            <summary>
+            Filtro por ID del estado del proyecto.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalFilterDTO.applicant">
+            <summary>
+            Filtro por ID del solicitante (usuario que creó la solicitud).
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalFilterDTO.approvalUser">
+            <summary>
+            Filtro por ID del usuario aprobador asignado a algún paso.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Id">
+            <example>123e4567-e89b-12d3-a456-426614174000</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Title">
+            <example>Sistema de Gestión de Inventarios</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Description">
+            <example>Desarrollo de un sistema integral para administrar el inventario</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Amount">
+            <example>50000.00</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Duration">
+            <example>90</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Area">
+            <example>Tecnología</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Status">
+            <example>Pendiente</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalGetDTO.Type">
+            <example>Desarrollo</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalUpdateDTO.Title">
+            <example>Sistema de Gestión de Inventarios y Logística</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalUpdateDTO.Description">
+            <example>Desarrollo de un sistema integral para administrar el inventario y la logística de la empresa</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectProposalDTOs.ProjectProposalUpdateDTO.Duration">
+            <example>120</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectTypeDTOs.ProjectTypeGetDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.ProjectTypeDTOs.ProjectTypeGetDTO.Name">
+            <example>Desarrollo</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.UserDTOs.UserGetDTO.Id">
+            <example>1</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.UserDTOs.UserGetDTO.Name">
+            <example>Juan Pérez</example>
+        </member>
+        <member name="P:Proyecto_Software_Individual.Aplication.DTOs.UserDTOs.UserGetDTO.Email">
+            <example>juan.perez@empresa.com</example>
+        </member>
+        <member name="T:Proyecto_Software_Individual.Migrations.CorrigiendoBaseDeDatos">
+            <inheritdoc />
+        </member>
+        <member name="M:Proyecto_Software_Individual.Migrations.CorrigiendoBaseDeDatos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Proyecto_Software_Individual.Migrations.CorrigiendoBaseDeDatos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Proyecto_Software_Individual.Migrations.CorrigiendoBaseDeDatos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
