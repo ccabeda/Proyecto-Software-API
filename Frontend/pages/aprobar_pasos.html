@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aprobar pasos</title>
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-black dark:text-white transition-colors duration-500">
+
+  <!-- Toggle darkmode -->
+  <div id="darkmode-toggle"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <h1 class="text-2xl font-bold mb-2">Proyectos con pasos pendientes</h1>
+    <h6 id="total-proyectos" class="text-verde-fuerte mb-6">Pasos pendientes: ...</h6>
+
+    <!-- Filtros accesibles -->
+    <form id="form-filtro" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" aria-label="Formulario para filtrar proyectos con pasos pendientes">
+      <div class="relative">
+        <label for="filtro-titulo" class="sr-only">Título del proyecto</label>
+        <input type="text" id="filtro-titulo" name="filtro-titulo" placeholder="Título del proyecto"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:ring-verde-fuerte focus:outline-none"
+          aria-label="Filtrar por título del proyecto" />
+        <button type="button" aria-label="Borrar filtro de título"
+          class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500 btn-clear-input"
+          data-target="filtro-titulo">&times;</button>
+      </div>
+      <div class="md:col-span-2 text-end">
+        <button type="submit" aria-label="Buscar proyectos con pasos pendientes"
+          class="flex items-center gap-1 bg-verde-fuerte hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md transition text-sm">
+          <i data-lucide="search" class="w-4 h-4" aria-hidden="true"></i>
+          Buscar
+        </button>
+      </div>
+    </form>
+
+    <!-- Tabla accesible -->
+    <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow">
+      <table class="tabla-estandar" role="table" aria-label="Listado de proyectos con pasos pendientes">
+        <thead class="encabezado-tabla">
+          <tr>
+            <th scope="col" class="celda-tabla font-semibold w-1/3">Título</th>
+            <th scope="col" class="celda-tabla font-semibold">Tipo</th>
+            <th scope="col" class="celda-tabla font-semibold">Estado</th>
+            <th scope="col" class="celda-tabla font-semibold">Área</th>
+            <th scope="col" class="celda-tabla font-semibold">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-proyectos" class="text-gray-800 dark:text-gray-200 divide-y divide-gray-200 dark:divide-gray-700">
+          <!-- Se completa con JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js"></script>
+  <script type="module" src="../js/utils.js"></script>
+  <script type="module" src="../js/aprobar_pasos.js"></script>
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

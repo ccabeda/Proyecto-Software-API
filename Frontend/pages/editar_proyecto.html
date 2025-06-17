@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar proyecto</title>
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <script>
+    if (localStorage.getItem("modo") === "oscuro") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-black dark:text-white transition-colors duration-500">
+  <!-- Toggle modo oscuro + Sidebar -->
+  <div id="darkmode-toggle"></div>
+  <div id="sidebar-container"></div>
+
+  <main class="main-content" aria-label="Sección principal de edición de proyectos">
+    <h2 class="text-2xl font-semibold mb-1">Editar proyectos</h2>
+    <h6 id="total-proyectos" class="text-verde-fuerte font-medium mb-6" aria-live="polite">Proyectos disponibles: ...</h6>
+
+    <!-- Formulario de filtro con accesibilidad -->
+    <form id="form-filtro" class="flex flex-wrap gap-4 items-center mb-6" aria-label="Formulario de búsqueda de proyectos">
+      <div class="relative">
+        <label for="filtro-titulo" class="sr-only">Buscar por título del proyecto</label>
+        <input type="text" id="filtro-titulo" placeholder="Título del proyecto" aria-label="Buscar por título"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte" />
+        <button type="button" class="absolute right-3 top-2 text-lg text-gray-400 hover:text-red-500 btn-clear-input"
+          data-target="filtro-titulo" aria-label="Borrar búsqueda de título">&times;</button>
+      </div>
+      <div>
+        <button type="submit"
+          class="flex items-center gap-1 bg-verde-fuerte hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md transition text-sm"
+          aria-label="Buscar proyectos">
+          <i data-lucide="search" class="w-4 h-4" aria-hidden="true"></i>
+          Buscar
+        </button>
+      </div>
+    </form>
+
+    <!-- Mensaje de estado -->
+    <div id="mensaje" class="mb-4 text-sm" role="status" aria-live="polite"></div>
+
+    <!-- Tabla con accesibilidad -->
+    <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow" role="region" aria-label="Tabla de proyectos observados">
+      <table class="tabla-estandar">
+        <thead class="encabezado-tabla">
+          <tr>
+            <th scope="col" class="encabezado-celda w-1/2">Título</th>
+            <th scope="col" class="encabezado-celda">Estado</th>
+            <th scope="col" class="encabezado-celda">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-observados" class="text-gray-800 dark:text-gray-200">
+          <!-- Completado por JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js"></script>
+  <script type="module" src="../js/utils.js"></script>
+  <script type="module" src="../js/editar_proyecto.js"></script>
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

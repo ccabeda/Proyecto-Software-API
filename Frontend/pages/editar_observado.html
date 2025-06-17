@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar proyecto</title>
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <script>
+    if (localStorage.getItem("modo") === "oscuro") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-black dark:text-white transition-colors duration-500">
+  <!-- Toggle modo oscuro + Sidebar -->
+  <div id="darkmode-toggle"></div>
+  <div id="sidebar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="main-content ml-60 px-6 py-8 min-h-screen">
+    <h2 class="text-2xl font-semibold mb-6">Editar</h2>
+
+    <div id="mensaje" class="mb-4 text-sm" role="status" aria-live="polite"></div>
+
+    <form id="form-editar" class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-xl mx-auto space-y-5" aria-label="Formulario de edición de proyecto">
+      <div>
+        <label for="titulo" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Título</label>
+        <input type="text" id="titulo" aria-label="Título del proyecto" required
+          class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-verde-fuerte" />
+      </div>
+
+      <div>
+        <label for="descripcion" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Descripción</label>
+        <textarea id="descripcion" rows="4" aria-label="Descripción del proyecto" required
+          class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-verde-fuerte"></textarea>
+      </div>
+
+      <div>
+        <label for="duracion" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Duración (en meses)</label>
+        <input type="number" id="duracion" aria-label="Duración del proyecto en meses" required
+          class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-verde-fuerte" />
+      </div>
+
+      <div class="text-end">
+        <button type="submit"
+          class="flex items-center gap-2 bg-verde-fuerte hover:bg-green-700 text-white px-5 py-2 rounded-md font-medium transition">
+          <i data-lucide="save" class="w-4 h-4" aria-hidden="true"></i>
+          Guardar Cambios
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js"></script>
+  <script type="module" src="../js/utils.js"></script>
+  <script type="module" src="../js/editar_observado.js"></script>
+  <script src="../js/darkmode.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

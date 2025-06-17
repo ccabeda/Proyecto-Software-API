@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - AprobApp</title>
+  <link rel="icon" type="image/png" href="../img/favicon.ico" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-black dark:text-white transition-colors duration-500">
+
+  <!-- Switch modo oscuro -->
+  <div id="darkmode-toggle"></div>
+
+  <!-- Logo y formulario -->
+  <div class="flex flex-col items-center justify-center min-h-screen" aria-label="Página de inicio de sesión">
+
+    <!-- Logo -->
+    <div class="mb-6">
+      <img src="../img/logo.png" alt="Logo de AprobApp" class="h-24 mx-auto drop-shadow dark:brightness-125">
+    </div>
+
+    <!-- Caja de login -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md w-full max-w-sm">
+      <h2 class="text-xl font-semibold text-center text-verde-fuerte dark:text-green-300 mb-4" id="login-heading">
+        Iniciar sesión
+      </h2>
+
+      <form id="login-form" aria-labelledby="login-heading" aria-describedby="login-description">
+        <p id="login-description" class="sr-only">Ingrese su dirección de correo para acceder al sistema</p>
+
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required
+            class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-verde-fuerte" />
+        </div>
+
+        <button type="submit" aria-label="Entrar al sistema"
+          class="w-full py-2 px-4 bg-verde-fuerte text-white font-semibold rounded-md shadow-sm transition duration-300 ease-in-out transform hover:scale-105 hover:bg-green-700">
+          Entrar
+        </button>
+      </form>
+
+      <!-- Mensaje de error -->
+      <div id="mensaje-error" class="text-red-500 mt-3 text-sm text-center" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- Footer flotante -->
+  <div class="fixed bottom-2 right-4 text-sm text-gray-500 dark:text-gray-400">
+    © 2025 AprobApp from Vuo
+  </div>
+
+  <script type="module" src="../js/login.js"></script>
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

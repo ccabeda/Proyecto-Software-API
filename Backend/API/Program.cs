@@ -35,6 +35,19 @@ builder.Services.AddDbContext<AplicationDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("Connection"));
 });
 
+var frontend = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: frontend,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://127.0.0.1:5500")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+});
+
 
 builder.Services.AddAutoMapper(typeof(AutomapperConfig));
 builder.Services.AddScoped<IRepositoryApprovalRuleQuery, RepositoryApprovalRuleQuery>();
@@ -101,6 +114,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(frontend);
 
 app.UseHttpsRedirection();
 

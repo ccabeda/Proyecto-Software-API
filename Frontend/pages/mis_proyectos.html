@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis proyectos</title>
+  <link rel="icon" type="image/png" href="../img/favicon.ico" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-black dark:text-white transition-colors duration-500">
+
+  <!-- Toggle modo oscuro + cerrar sesión (JS lo inserta) -->
+  <div id="darkmode-toggle" class="fixed bottom-3 right-4 z-50 flex gap-4 items-center"></div>
+
+  <!-- Contenido -->
+  <main class="main-content px-6 py-8 ml-60" aria-label="Mis proyectos creados">
+    <h1 class="text-3xl font-bold mb-1">Mis proyectos</h1>
+    <h6 id="total-proyectos" class="text-verde-fuerte font-medium mt-2 mb-6">Proyectos creados: ...</h6>
+
+    <!-- Filtros -->
+    <form id="form-filtro" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" aria-label="Formulario de filtros">
+      <!-- Título -->
+      <div class="relative">
+        <label for="filtro-titulo" class="sr-only">Buscar por título</label>
+        <input type="text" id="filtro-titulo" aria-label="Título del proyecto"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte"
+          placeholder="Título del proyecto">
+        <button type="button" aria-label="Borrar filtro de título"
+          class="absolute right-3 top-2 text-lg text-gray-400 hover:text-red-500 btn-clear-input"
+          data-target="filtro-titulo">&times;</button>
+      </div>
+
+      <!-- Estado -->
+      <div>
+        <label for="filtro-estado" class="sr-only">Estado</label>
+        <select id="filtro-estado" aria-label="Estado del proyecto"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte">
+          <option value="">Todos los estados</option>
+          <option value="1">Pendiente</option>
+          <option value="2">Aprobado</option>
+          <option value="3">Rechazado</option>
+          <option value="4">Observado</option>
+        </select>
+      </div>
+
+      <!-- Aprobador -->
+      <div>
+        <label for="filtro-aprobador" class="sr-only">ID del aprobador</label>
+        <input type="number" id="filtro-aprobador" aria-label="ID del aprobador"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte"
+          placeholder="ID del aprobador">
+      </div>
+
+      <!-- Botón buscar -->
+      <div class="md:col-span-3 text-end">
+        <button type="submit" aria-label="Buscar proyectos"
+          class="flex items-center gap-1 bg-verde-fuerte hover:bg-green-700 text-white font-medium px-3 py-2 rounded-md transition text-sm">
+          <i data-lucide="search" class="w-4 h-4" aria-hidden="true"></i>
+          Buscar
+        </button>
+      </div>
+    </form>
+
+    <!-- Tabla de proyectos -->
+    <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow" role="region" aria-label="Tabla de proyectos creados">
+      <table class="tabla-estandar">
+        <thead class="encabezado-tabla">
+          <tr>
+            <th class="encabezado-celda w-1/3">Título</th>
+            <th class="encabezado-celda">Tipo</th>
+            <th class="encabezado-celda">Estado</th>
+            <th class="encabezado-celda">Área</th>
+            <th class="encabezado-celda">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-mis-proyectos" class="text-gray-800 dark:text-gray-200">
+          <!-- Se completa con JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js"></script>
+  <script type="module" src="../js/utils.js"></script>
+  <script type="module" src="../js/mis_proyectos.js"></script>
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

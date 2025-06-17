@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluar paso pendiente</title>
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <script>
+    if (localStorage.getItem("modo") === "oscuro") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-black text-gray-900 dark:text-white transition-colors duration-500">
+
+  <!-- Toggle modo oscuro -->
+  <div id="darkmode-toggle"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Contenido -->
+  <main class="main-content" aria-labelledby="titulo-proyecto">
+    <h1 class="text-2xl font-bold mb-2">
+      Evaluar Paso de Proyecto: <span id="titulo-proyecto"></span>
+    </h1>
+
+    <div id="mensaje" class="mb-4" role="status" aria-live="polite"></div>
+
+    <div id="detalle-proyecto" class="mb-6">
+      <!-- Se rellena con JS -->
+    </div>
+
+    <form id="form-evaluacion" class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow max-w-xl mx-auto" aria-label="Formulario de evaluación del paso del proyecto">
+      <div class="mb-4">
+        <label for="observacion" class="block mb-2 text-sm font-medium">Observación</label>
+        <textarea id="observacion" rows="4" required
+          class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-verde-fuerte text-gray-900 dark:text-white"
+          aria-label="Ingresar observación para el paso"></textarea>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <button type="button" aria-label="Aprobar paso del proyecto"
+          class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded"
+          data-accion="2">
+          <i data-lucide="check" class="w-4 h-4" aria-hidden="true"></i> Aprobar
+        </button>
+
+        <button type="button" aria-label="Observar paso del proyecto"
+          class="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded"
+          data-accion="4">
+          <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i> Observar
+        </button>
+
+        <button type="button" aria-label="Rechazar paso del proyecto"
+          class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded"
+          data-accion="3">
+          <i data-lucide="x" class="w-4 h-4" aria-hidden="true"></i> Rechazar
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="../js/sidebar.js"></script>
+  <script type="module" src="../js/utils.js"></script>
+  <script type="module" src="../js/ver_paso.js"></script>
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

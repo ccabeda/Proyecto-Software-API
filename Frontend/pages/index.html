@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio</title>
+  <link rel="icon" type="image/png" href="../img/favicon.ico" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-black dark:text-white transition-colors duration-500">
+
+  <!-- Toggle de modo oscuro -->
+  <div id="darkmode-toggle"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <h1 id="bienvenida" class="text-3xl font-bold mb-1">Bienvenido</h1>
+    <h6 id="rol-usuario" class="text-gray-500 dark:text-gray-300 mb-4"></h6>
+    <h5 id="total-proyectos" class="text-verde-fuerte font-medium mb-6"></h5>
+
+    <!-- Formulario de filtros accesible -->
+    <form id="form-filtro" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-6" aria-label="Formulario de filtros de proyectos">
+      <div class="relative">
+        <label for="filtro-titulo" class="sr-only">Título del proyecto</label>
+        <input type="text" id="filtro-titulo" name="filtro-titulo"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte"
+          placeholder="Título del proyecto" aria-label="Filtrar por título" />
+        <button type="button" aria-label="Borrar filtro de título"
+          class="absolute right-3 top-2 text-lg text-gray-400 hover:text-red-500 btn-clear-input"
+          data-target="filtro-titulo">&times;</button>
+      </div>
+
+      <div>
+        <label for="filtro-estado" class="sr-only">Estado del proyecto</label>
+        <select id="filtro-estado" name="filtro-estado"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-verde-fuerte"
+          aria-label="Filtrar por estado">
+          <option value="">Todos los estados</option>
+          <option value="1">Pendiente</option>
+          <option value="2">Aprobado</option>
+          <option value="3">Rechazado</option>
+          <option value="4">Observado</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="filtro-applicant" class="sr-only">ID del solicitante</label>
+        <input type="number" id="filtro-applicant" name="filtro-applicant" placeholder="ID del solicitante"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte"
+          aria-label="Filtrar por ID del solicitante" />
+      </div>
+
+      <div>
+        <label for="filtro-aprobador" class="sr-only">ID del aprobador</label>
+        <input type="number" id="filtro-aprobador" name="filtro-aprobador" placeholder="ID del aprobador"
+          class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-sm focus:ring-2 focus:ring-verde-fuerte"
+          aria-label="Filtrar por ID del aprobador" />
+      </div>
+
+      <div class="md:col-span-1 flex justify-end items-end">
+        <button type="submit" aria-label="Buscar proyectos"
+          class="flex items-center gap-1 bg-verde-fuerte hover:bg-green-700 text-white font-medium px-3 py-2 rounded-md transition text-sm">
+          <i data-lucide="search" class="w-4 h-4" aria-hidden="true"></i>
+          Buscar
+        </button>
+      </div>
+    </form>
+
+    <!-- Tabla de proyectos accesible -->
+    <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow">
+      <table class="tabla-estandar" role="table" aria-label="Listado de proyectos">
+        <thead class="encabezado-tabla">
+          <tr>
+            <th scope="col" class="encabezado-celda w-1/3">Título</th>
+            <th scope="col" class="encabezado-celda">Tipo</th>
+            <th scope="col" class="encabezado-celda">Estado</th>
+            <th scope="col" class="encabezado-celda">Área</th>
+            <th scope="col" class="encabezado-celda">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-proyectos" class="text-gray-800 dark:text-gray-200">
+          <!-- Se completa con JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/sidebar.js"></script>
+  <script type="module" src="../js/utils.js"></script>
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/darkmode.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        document.getElementById("bienvenida").textContent = `Bienvenido, ${user.name}`;
+        document.getElementById("rol-usuario").textContent = user.role.name;
+
+        setTimeout(() => {
+          const filas = document.querySelectorAll("#tabla-proyectos tr");
+          const total = filas.length;
+          document.getElementById("total-proyectos").textContent = `Proyectos totales: ${total}`;
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
